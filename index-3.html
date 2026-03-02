@@ -79,31 +79,31 @@
 		padding-top: 72px;
 		padding-bottom: 90px;
 	}
-	.main-header.header-style-three .main-box {
+	.main-header.header-style-one .main-box {
 		background: rgba(8, 12, 24, 0.46);
 		border: 1px solid rgba(255, 255, 255, 0.1);
 		backdrop-filter: blur(8px);
 	}
-	.main-header.header-style-three {
+	.main-header.header-style-one {
 		position: relative;
-		background: #070d1b;
+		background: radial-gradient(circle at 50% 0%, #23429f 0%, #101b43 40%, #070d21 80%, #040812 100%);
 		z-index: 20;
 	}
-	.main-header.header-style-three .logo-box {
+	.main-header.header-style-one .logo-box {
 		padding: 14px 0;
 	}
-	.main-header.header-style-three .logo img {
+	.main-header.header-style-one .logo img {
 		max-height: 66px;
 		width: auto;
 	}
-	.main-header.header-style-three .main-box {
+	.main-header.header-style-one .main-box {
 		min-height: 96px;
 	}
-	.main-header.header-style-three .main-menu .navigation > li > a {
+	.main-header.header-style-one .main-menu .navigation > li > a {
 		color: rgba(230, 238, 255, 0.9);
 	}
-	.main-header.header-style-three .main-menu .navigation > li:hover > a,
-	.main-header.header-style-three .main-menu .navigation > li.current > a {
+	.main-header.header-style-one .main-menu .navigation > li:hover > a,
+	.main-header.header-style-one .main-menu .navigation > li.current > a {
 		color: #ffffff;
 	}
 	.sticky-header {
@@ -280,12 +280,12 @@
 		.acesoft-hero {
 			min-height: auto;
 		}
-		.main-header.header-style-three .main-box {
+		.main-header.header-style-one .main-box {
 			background: transparent;
 			border: 0;
 			backdrop-filter: none;
 		}
-		.main-header.header-style-three .logo img {
+		.main-header.header-style-one .logo img {
 			max-height: 56px;
 		}
 		.acesoft-hero .auto-container {
@@ -1223,7 +1223,7 @@
 	
 
 	<!-- Main Header-->
-	<header class="main-header header-style-three">
+	<header class="main-header header-style-one">
 		<div class="header-top">
 			<div class="inner-container">
 				<div class="top-left">
@@ -1375,7 +1375,7 @@
 					</div>
 				</div>
 				<!--Nav Box-->
-				<div class="nav-outer">
+				<div class="nav-outer nav-outer--padding">
 					<nav class="nav main-menu">
 						<ul class="navigation">
 							<li><a href="index-3.html" class="acesoft-nav-current-link">Home</a></li>
@@ -1386,7 +1386,7 @@
 					</nav>
 					<!-- Main Menu End-->
 				</div>
-				<div class="outer-box">
+				<div class="outer-box outer-box--padding">
 					<!-- <div class="ui-btn-outer">
 						<i class="icon fa fa-email"></i>
 						<small>Email us : </small>
