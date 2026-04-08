@@ -7,6 +7,7 @@
   <link href="css/bootstrap.min.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
   <link href="css/responsive.css" rel="stylesheet" />
+  <link href="css/footer-component.css" rel="stylesheet" />
   <link rel="shortcut icon" href="images/logo-2.png" type="image/x-icon" />
   <link rel="icon" href="images/logo-2.png" type="image/x-icon" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -14,6 +15,179 @@
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <style>
+    .flag-icon {
+      display: inline-block;
+      vertical-align: middle;
+      width: 20px;
+      height: 15px;
+      margin-right: 5px;
+    }
+
+    .country {
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .main-header.header-style-one .main-box {
+      background: rgba(8, 12, 24, 0.46);
+      backdrop-filter: blur(8px);
+      min-height: 96px;
+    }
+
+    .main-header.header-style-one {
+      position: relative;
+      background: radial-gradient(circle at 50% 0%, #23429f 0%, #101b43 40%, #070d21 80%, #040812 100%);
+      z-index: 20;
+    }
+
+    .main-header.header-style-one .logo-box {
+      padding: 14px 0;
+    }
+
+    .main-header.header-style-one .logo img {
+      max-height: 66px;
+      width: auto;
+    }
+
+    .main-header.header-style-one .main-menu .navigation > li > a {
+      color: rgba(230, 238, 255, 0.9);
+    }
+
+    .main-header.header-style-one .main-menu .navigation > li:hover > a,
+    .main-header.header-style-one .main-menu .navigation > li.current > a {
+      color: #ffffff;
+    }
+
+    .sticky-header {
+      background: #ffffff;
+      border-bottom: 1px solid #e8edf7;
+    }
+
+    .sticky-header .logo img {
+      max-height: 52px;
+      width: auto;
+    }
+
+    .sticky-header .main-menu .navigation > li > a {
+      color: #1a2444 !important;
+    }
+
+    .sticky-header .main-menu .navigation > li.dropdown > a:after {
+      color: #1a2444;
+    }
+
+    .sticky-header .main-menu .navigation > li.current > a,
+    .sticky-header .main-menu .navigation > li:hover > a {
+      color: #ff4b63 !important;
+    }
+
+    .header-top {
+      background: rgba(8, 12, 24, 0.42);
+      backdrop-filter: blur(8px);
+      box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+    .header-top .inner-container {
+      min-height: 46px;
+      margin: 0 auto;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .header-top .top-left {
+      display: flex;
+      align-items: center;
+      flex: 1 1 auto;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .header-top .top-right {
+      display: flex;
+      align-items: center;
+      flex: 0 0 auto;
+      margin-left: auto;
+    }
+
+    .header-top .top-left .list-style-one {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      flex-wrap: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .header-top .top-left .list-style-one li {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      height: 30px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(150, 186, 255, 0.24);
+      color: rgba(236, 244, 255, 0.92);
+      font-size: 11px;
+      line-height: 1;
+      white-space: nowrap;
+      backdrop-filter: blur(5px);
+    }
+
+    .header-top .top-left .list-style-one li i {
+      color: #8dc2ff;
+      font-size: 11px;
+    }
+
+    .header-top .top-left .list-style-one li a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .header-top .top-left .list-style-one li a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .header-top .top-right .useful-links {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-top .top-right .useful-links li a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
+      padding: 0 14px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #ffffff;
+      border: 1px solid rgba(143, 186, 255, 0.38);
+      background: linear-gradient(135deg, #3d67dd 0%, #5a86ff 55%, #67a0ff 100%);
+      box-shadow: 0 8px 20px rgba(28, 74, 170, 0.34);
+      transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+    }
+
+    .header-top .top-right .useful-links li a:hover {
+      transform: translateY(-1px);
+      opacity: 0.95;
+      box-shadow: 0 10px 24px rgba(36, 102, 220, 0.38);
+    }
+
     .contact-page-shell {
       background:
         radial-gradient(circle at 88% 10%, rgba(66, 114, 255, 0.12) 0%, rgba(66, 114, 255, 0) 42%),
@@ -429,6 +603,16 @@
     }
 
     @media (max-width: 991.98px) {
+      .main-header.header-style-one .main-box {
+        background: transparent;
+        border: 0;
+        backdrop-filter: none;
+      }
+
+      .main-header.header-style-one .logo img {
+        max-height: 56px;
+      }
+
       .contact-hero {
         padding: 104px 0 80px;
       }
@@ -460,7 +644,40 @@
       }
     }
 
+    @media (max-width: 767px) {
+      .header-top .inner-container {
+        min-height: 40px;
+        padding: 0 12px;
+        gap: 8px;
+      }
+
+      .header-top .top-left .list-style-one li:nth-child(4) {
+        display: none;
+      }
+
+      .header-top .top-left .list-style-one li {
+        height: 28px;
+        font-size: 10px;
+        padding: 0 8px;
+      }
+
+      .header-top .top-right .useful-links li a {
+        height: 28px;
+        font-size: 10px;
+        padding: 0 10px;
+      }
+
+      .header-top .top-left {
+        overflow: hidden;
+      }
+    }
+
     @media (max-width: 500px) {
+      .header-top .top-left .list-style-one li:nth-child(2),
+      .header-top .top-left .list-style-one li:nth-child(3) {
+        display: none;
+      }
+
       .container-preloader .animation-preloader .spinner {
         height: 7em;
         width: 7em;
@@ -500,10 +717,67 @@
         <div class="inner-container">
           <div class="top-left">
             <ul class="list-style-one">
-              <li><i class="fa fa-certificate"></i> ISO 9001 Certified</li>
-              <li><i class="fa fa-certificate"></i> ISO 27001 Certified</li>
-              <li><i class="fa fa-map-marker"></i> Canada, India, UAE, USA, UK</li>
-              <li><i class="fa fa-envelope"></i> <a href="mailto:info@acesoft.ca">info@acesoft.ca</a></li>
+              <li>
+                <i class="fa fa-envelope"></i>
+                <a href="mailto:info@acesoft.ca">info@acesoft.ca</a>
+              </li>
+              <li><i class="fa-solid fa-certificate"></i> ISO 9001 Certified</li>
+              <li><i class="fa-solid fa-certificate"></i> ISO 27001 Certified</li>
+              <li><i class="fa-solid fa-certificate"></i> HIPAA Compliant</li>
+              <li>
+                <i class="fa fa-map-marker"></i>
+                <span class="country">
+                  <svg class="flag-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="#f93" height="170.7" width="512" />
+                    <rect fill="#fff" height="170.7" width="512" y="170.7" />
+                    <rect fill="#128807" height="170.7" width="512" y="341.3" />
+                    <circle cx="256" cy="256" fill="#008" r="42.7" />
+                    <circle cx="256" cy="256" fill="#fff" r="35" />
+                    <circle cx="256" cy="256" fill="#008" r="8.5" />
+                    <g fill="#008">
+                      <circle cx="256" cy="212.5" r="5" />
+                      <circle cx="299.5" cy="256" r="5" />
+                      <circle cx="256" cy="299.5" r="5" />
+                      <circle cx="212.5" cy="256" r="5" />
+                    </g>
+                  </svg>
+                  India
+                </span>,
+                <span class="country">
+                  <svg class="flag-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="#00732f" height="170.7" width="512" />
+                    <rect fill="#fff" height="170.7" width="512" y="170.7" />
+                    <rect fill="#000" height="170.7" width="512" y="341.3" />
+                    <rect fill="#f00" height="512" width="170.7" />
+                  </svg>
+                  UAE (+971 56 491 9389)
+                </span>,
+                <span class="country">
+                  <svg class="flag-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="#fff" height="512" width="512" />
+                    <g fill="#bf0a30">
+                      <rect height="39.4" width="512" y="0" />
+                      <rect height="39.4" width="512" y="78.8" />
+                      <rect height="39.4" width="512" y="157.5" />
+                      <rect height="39.4" width="512" y="236.3" />
+                      <rect height="39.4" width="512" y="315" />
+                      <rect height="39.4" width="512" y="393.8" />
+                      <rect height="39.4" width="512" y="472.5" />
+                    </g>
+                    <rect fill="#002868" height="275.7" width="275.7" />
+                  </svg>
+                  USA
+                </span>,
+                <span class="country">
+                  <svg class="flag-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="32" height="16">
+                    <rect width="512" height="256" fill="#fff" />
+                    <rect width="128" height="256" fill="#d52b1e" />
+                    <rect x="384" width="128" height="256" fill="#d52b1e" />
+                    <path fill="#d52b1e" d="M256 48l12 37h39l-31 22 12 37-31-22-31 22 12-37-31-22h39z" />
+                  </svg>
+                  Canada (+1 519 808 1000)
+                </span>
+              </li>
             </ul>
           </div>
           <div class="top-right">
@@ -514,31 +788,25 @@
         </div>
       </div>
 
-      <div class="header-lower">
-        <div class="container-fluid">
-          <div class="main-box">
-            <div class="logo-box">
-              <div class="logo"><a href="index.html"><img src="images/logo.png" alt="Acesoft" /></a></div>
-            </div>
+      <div class="container-fluid">
+        <div class="main-box">
+          <div class="logo-box">
+            <div class="logo"><a href="index.html"><img src="images/logo-2.png" alt="Software Company London, Ontario, Canada" title="Tronis" /></a></div>
+          </div>
 
-            <div class="nav-outer nav-outer--padding">
-              <nav class="nav main-menu">
-                <ul class="navigation">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="android-app-development.html">Android</a></li>
-                  <li><a href="ios-app-development.html">iOS</a></li>
-                  <li><a href="page-contact.html" class="acesoft-nav-current-link">Get in Touch</a></li>
-                </ul>
-              </nav>
-            </div>
+          <div class="nav-outer nav-outer--padding">
+            <nav class="nav main-menu">
+              <ul class="navigation">
+                <li><a href="index.html" class="acesoft-nav-current-link">Home</a></li>
+                <li><a href="android-app-development.html">Android</a></li>
+                <li><a href="ios-app-development.html">iOS</a></li>
+                <li><a href="page-contact.html">Get in Touch</a></li>
+              </ul>
+            </nav>
+          </div>
 
-            <div class="outer-box outer-box--padding">
-              <a href="tel:+15198081000" class="info-btn">
-                <i class="icon fa fa-phone"></i>
-                <small>Call Anytime</small>+1 519 808 1000
-              </a>
-              <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
-            </div>
+          <div class="outer-box outer-box--padding">
+            <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>
           </div>
         </div>
       </div>
@@ -547,7 +815,7 @@
         <div class="menu-backdrop"></div>
         <nav class="menu-box">
           <div class="upper-box">
-            <div class="nav-logo"><a href="index.html"><img src="images/logo-2.png" alt="" title="" /></a></div>
+            <div class="nav-logo"><a href="index.html"><img src="images/logo.png" alt="Mobile App Development, Web application Development, Hire Developers and software engineers" title="" /></a></div>
             <div class="close-btn"><i class="icon fa fa-times"></i></div>
           </div>
           <ul class="navigation clearfix"></ul>
@@ -566,14 +834,36 @@
                 <a href="mailto:info@acesoft.ca">info@acesoft.ca</a>
               </div>
             </li>
+            <li>
+              <div class="contact-info-box">
+                <span class="icon lnr-icon-clock"></span>
+                <span class="title">Send Email</span>
+                Mon - Sat 8:00 - 6:30, Sunday - CLOSED
+              </div>
+            </li>
           </ul>
         </nav>
+      </div>
+
+      <div class="search-popup">
+        <span class="search-back-drop"></span>
+        <button class="close-search">
+          <span class="fa fa-times"></span>
+        </button>
+        <div class="search-inner">
+          <form method="post" action="blog-showcase.html">
+            <div class="form-group">
+              <input type="search" name="search-field" value="" placeholder="Search..." required="" />
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+          </form>
+        </div>
       </div>
 
       <div class="sticky-header">
         <div class="auto-container">
           <div class="inner-container">
-            <div class="logo"><a href="index.html"><img src="images/logo-2.png" alt="" /></a></div>
+            <div class="logo"><a href="index.html" title=""><img src="images/logo-2.png" alt="Mobile Application Development Company London Ontario" title="" /></a></div>
             <div class="nav-outer">
               <nav class="main-menu">
                 <div class="navbar-collapse show collapse clearfix">
@@ -754,65 +1044,7 @@
       </div>
     </section>
 
-    <footer class="main-footer">
-      <div class="bg bg-pattern-9"></div>
-      <div class="auto-container"></div>
-      <div class="widgets-section">
-        <div class="auto-container">
-          <div class="row">
-            <div class="footer-column col-xl-3 col-lg-12 col-md-12">
-              <div class="footer-widget about-widget">
-                <div class="logo">
-                  <a href="index.html"><img src="images/logo.png" alt="Acesoft Inc" /></a>
-                  <img src="images/acesoft/iso-certified.png" alt="ISO Certified Software Development Company Canada" />
-                </div>
-                <div class="text">Unlocking Innovation.</div>
-              </div>
-            </div>
-            <div class="footer-column col-xl-3 col-lg-4 col-md-4">
-              <div class="footer-widget links-widget">
-                <h6 class="widget-title">Explore</h6>
-                <ul class="user-links">
-                  <li><a href="enterprise-applications-development.html">Enterprise Application Development</a></li>
-                  <li><a href="ios-android-mobile-app-development.html">Mobile Application Development</a></li>
-                  <li><a href="ai-development-company.html">Artificial Intelligence</a></li>
-                  <li><a href="business-process-outsourcing-company-bpo-services.html">BPO Services</a></li>
-                  <li><a href="bpo-backoffice-support-company.html">Customer Service</a></li>
-                  <li><a href="hire-software-developers-team.html">Hire Software Developers</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="footer-column col-xl-3 col-lg-4 col-md-4 col-sm-8">
-              <div class="footer-widget gallery-widget">
-                <h6 class="widget-title">Office locations : 24 X 7 X 365</h6>
-                <img src="images/acesoft/acesoft-locations.png" alt="Acesoft Inc Locations" width="300" height="275" />
-              </div>
-            </div>
-            <div class="footer-column col-xl-3 col-lg-4 col-md-4">
-              <div class="footer-widget contacts-widget">
-                <h6 class="widget-title">Contact</h6>
-                <div class="text">200 Villagewalk Blvd Suite 304, London, ON N6G 0W8</div>
-                <ul class="contact-info">
-                  <li><i class="fa fa-envelope"></i> <a href="mailto:info@acesoft.ca">info@acesoft.ca</a><br /></li>
-                  <li><i class="fa fa-phone-square"></i> <a href="tel:+15198081000">+1 519 808 1000</a><br /></li>
-                </ul>
-                <div class="btn-box animate-3">
-                  <a href="page-contact.html" class="theme-btn btn-style-one"><span class="btn-title">Contact Us</span></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <div class="auto-container">
-          <div class="inner-container">
-            <div class="copyright-text">&copy; Copyright <span id="currentYear"></span> by <a href="index.html">Acesoft.ca</a></div>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <div id="footer-root"></div>
   </div>
 
   <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
@@ -832,8 +1064,18 @@
   <script src="js/jquery.form.min.js"></script>
 
   <script>
-    var currentYear = new Date().getFullYear();
-    document.getElementById("currentYear").innerText = currentYear;
+    (function () {
+      var root = document.getElementById("footer-root");
+      if (!root) return;
+      fetch("footer.html")
+        .then(function (res) { return res.text(); })
+        .then(function (html) {
+          root.innerHTML = html;
+          var year = root.querySelector("#currentYear");
+          if (year) year.innerText = new Date().getFullYear();
+        })
+        .catch(function () {});
+    })();
   </script>
 
   <script>
@@ -879,13 +1121,11 @@
   <script>
     (function () {
       var hero = document.getElementById("contactHero");
-      if (!hero) return;
-
-      var orbs = hero.querySelectorAll(".hero-orb");
       var cards = document.querySelectorAll(".js-tilt-card");
       var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-      if (!reduceMotion) {
+      if (hero && !reduceMotion) {
+        var orbs = hero.querySelectorAll(".hero-orb");
         hero.addEventListener("mousemove", function (e) {
           var rect = hero.getBoundingClientRect();
           var x = (e.clientX - rect.left) / rect.width - 0.5;

@@ -7,6 +7,9 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <link href="css/responsive.css" rel="stylesheet">
+<link href="css/footer-component.css" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"> -->
+<link href="css/acesoft-services-component.css" rel="stylesheet">
 
 <link rel="shortcut icon" href="images/logo-2.png" type="image/x-icon">
 <link rel="icon" href="images/logo-2.png" type="image/x-icon">
@@ -81,7 +84,7 @@
 	}
 	.main-header.header-style-one .main-box {
 		background: rgba(8, 12, 24, 0.46);
-		border: 1px solid rgba(255, 255, 255, 0.1);
+		/* border: 1px solid rgba(255, 255, 255, 0.1); */
 		backdrop-filter: blur(8px);
 	}
 	.main-header.header-style-one {
@@ -123,6 +126,100 @@
 	.sticky-header .main-menu .navigation > li.current > a,
 	.sticky-header .main-menu .navigation > li:hover > a {
 		color: #ff4b63 !important;
+	}
+	.header-top {
+		background: rgba(8, 12, 24, 0.42);
+		backdrop-filter: blur(8px);
+		box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+	}
+	.header-top .inner-container {
+		min-height: 46px;
+		margin: 0 auto;
+		padding: 0 18px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+	}
+	.header-top .top-left {
+		display: flex;
+		align-items: center;
+		flex: 1 1 auto;
+		min-width: 0;
+		overflow: hidden;
+	}
+	.header-top .top-right {
+		display: flex;
+		align-items: center;
+		flex: 0 0 auto;
+		margin-left: auto;
+	}
+	.header-top .top-left .list-style-one {
+		display: flex;
+		align-items: center;
+		gap: 7px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		flex-wrap: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.header-top .top-left .list-style-one li {
+		display: inline-flex;
+		align-items: center;
+		gap: 7px;
+		height: 30px;
+		padding: 0 10px;
+		border-radius: 999px;
+		background: rgba(255, 255, 255, 0.07);
+		border: 1px solid rgba(150, 186, 255, 0.24);
+		color: rgba(236, 244, 255, 0.92);
+		font-size: 11px;
+		line-height: 1;
+		white-space: nowrap;
+		backdrop-filter: blur(5px);
+	}
+	.header-top .top-left .list-style-one li i {
+		color: #8dc2ff;
+		font-size: 11px;
+	}
+	.header-top .top-left .list-style-one li a {
+		color: inherit;
+		text-decoration: none;
+	}
+	.header-top .top-left .list-style-one li a:hover {
+		color: #ffffff;
+		text-decoration: underline;
+	}
+	.header-top .top-right .useful-links {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		align-items: center;
+	}
+	.header-top .top-right .useful-links li a {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		height: 30px;
+		padding: 0 14px;
+		border-radius: 999px;
+		font-size: 11px;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		color: #ffffff;
+		border: 1px solid rgba(143, 186, 255, 0.38);
+		background: linear-gradient(135deg, #3d67dd 0%, #5a86ff 55%, #67a0ff 100%);
+		box-shadow: 0 8px 20px rgba(28, 74, 170, 0.34);
+		transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+	}
+	.header-top .top-right .useful-links li a:hover {
+		transform: translateY(-1px);
+		opacity: 0.95;
+		box-shadow: 0 10px 24px rgba(36, 102, 220, 0.38);
 	}
 	.acesoft-hero .hero-subtitle {
 		display: inline-flex;
@@ -320,6 +417,33 @@
 		.acesoft-hero .phone-shell {
 			width: 200px;
 			height: 410px;
+		}
+	}
+	@media (max-width: 767px) {
+		.header-top .inner-container {
+			min-height: 40px;
+			padding: 0 12px;
+			gap: 8px;
+		}
+		.header-top .top-left .list-style-one li:nth-child(4) {
+			display: none;
+		}
+		.header-top .top-left .list-style-one li {
+			height: 28px;
+			font-size: 10px;
+			padding: 0 8px;
+		}
+		.header-top .top-right .useful-links li a {
+			height: 28px;
+			font-size: 10px;
+			padding: 0 10px;
+		}
+		.header-top .top-left { overflow: hidden; }
+	}
+	@media (max-width: 500px) {
+		.header-top .top-left .list-style-one li:nth-child(2),
+		.header-top .top-left .list-style-one li:nth-child(3) {
+			display: none;
 		}
 	}
 	.acesoft-services-section {
@@ -1227,132 +1351,126 @@
 		<div class="header-top">
 			<div class="inner-container">
 				<div class="top-left">
-					<!-- Info List --> 
+					<!-- Info List -->
 					<ul class="list-style-one">
-						<li> 
-							<i class="fa fa-envelope"></i> 
-							<a href="mailto:info@acesoft.ca">info@acesoft.ca</a> 
-						</li>
-						<li> 
-							<i class="fa-solid fa-certificate"></i> ISO 9001 Certified 
-						</li>
-						<li> 
-							<i class="fa-solid fa-certificate"></i> ISO 27001 Certified 
+						<li>
+							<i class="fa fa-envelope"></i>
+							<a href="mailto:info@acesoft.ca">info@acesoft.ca</a>
 						</li>
 						<li>
-							<i class="fa fa-map-marker"></i> 
-							<i class="fa fa-map-marker"></i> 
+							<i class="fa-solid fa-certificate"></i> ISO 9001 Certified
+						</li>
+						<li>
+							<i class="fa-solid fa-certificate"></i> ISO 27001 Certified
+						</li>
+						<li>
+							<i class="fa-solid fa-certificate"></i> HIPAA Compliant
+						</li>
+						<li>
+							<i class="fa fa-map-marker"></i>
+							<!-- <i class="fa fa-map-marker"></i> -->
 							<span class="country">
-							  <svg class="flag-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="32" height="16">
-								<!-- Canada Flag -->
-								<rect width="512" height="256" fill="#fff"/>
-								<rect width="128" height="256" fill="#d52b1e"/>
-								<rect x="384" width="128" height="256" fill="#d52b1e"/>
-								<path fill="#d52b1e" d="M256 48l12 37h39l-31 22 12 37-31-22-31 22 12-37-31-22h39z"/>
-							  </svg>
-							  Canada (+1 226 700 7030)
+								<svg class="flag-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+									<!-- India Flag -->
+									<rect fill="#f93" height="170.7" width="512" />
+									<rect fill="#fff" height="170.7" width="512" y="170.7" />
+									<rect fill="#128807" height="170.7" width="512" y="341.3" />
+									<circle cx="256" cy="256" fill="#008" r="42.7" />
+									<circle cx="256" cy="256" fill="#fff" r="35" />
+									<circle cx="256" cy="256" fill="#008" r="8.5" />
+									<g fill="#008">
+										<circle cx="256" cy="212.5" r="5" />
+										<circle cx="299.5" cy="256" r="5" />
+										<circle cx="256" cy="299.5" r="5" />
+										<circle cx="212.5" cy="256" r="5" />
+									</g>
+								</svg>
+								India
 							</span>
-							, 
+							,
 							<span class="country">
-							  <svg class="flag-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-								 <!-- India Flag -->
-								 <rect fill="#f93" height="170.7" width="512"/>
-								 <rect fill="#fff" height="170.7" width="512" y="170.7"/>
-								 <rect fill="#128807" height="170.7" width="512" y="341.3"/>
-								 <circle cx="256" cy="256" fill="#008" r="42.7"/>
-								 <circle cx="256" cy="256" fill="#fff" r="35"/>
-								 <circle cx="256" cy="256" fill="#008" r="8.5"/>
-								 <g fill="#008">
-									<circle cx="256" cy="212.5" r="5"/>
-									<circle cx="299.5" cy="256" r="5"/>
-									<circle cx="256" cy="299.5" r="5"/>
-									<circle cx="212.5" cy="256" r="5"/>
-								 </g>
-							  </svg>
-							  India
+								<svg class="flag-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+									<!-- UAE Flag -->
+									<rect fill="#00732f" height="170.7" width="512" />
+									<rect fill="#fff" height="170.7" width="512" y="170.7" />
+									<rect fill="#000" height="170.7" width="512" y="341.3" />
+									<rect fill="#f00" height="512" width="170.7" />
+								</svg>
+								UAE (+971 56 491 9389)
 							</span>
-							, 
+							,
 							<span class="country">
-							  <svg class="flag-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-								 <!-- UAE Flag -->
-								 <rect fill="#00732f" height="170.7" width="512"/>
-								 <rect fill="#fff" height="170.7" width="512" y="170.7"/>
-								 <rect fill="#000" height="170.7" width="512" y="341.3"/>
-								 <rect fill="#f00" height="512" width="170.7"/>
-							  </svg>
-							  UAE (+971 56 491 9389)
+								<svg class="flag-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+									<!-- USA Flag -->
+									<rect fill="#fff" height="512" width="512" />
+									<g fill="#bf0a30">
+										<rect height="39.4" width="512" y="0" />
+										<rect height="39.4" width="512" y="78.8" />
+										<rect height="39.4" width="512" y="157.5" />
+										<rect height="39.4" width="512" y="236.3" />
+										<rect height="39.4" width="512" y="315" />
+										<rect height="39.4" width="512" y="393.8" />
+										<rect height="39.4" width="512" y="472.5" />
+									</g>
+									<rect fill="#002868" height="275.7" width="275.7" />
+									<g fill="#fff">
+										<circle cx="27.6" cy="27.6" r="10" />
+										<circle cx="82.7" cy="27.6" r="10" />
+										<circle cx="137.8" cy="27.6" r="10" />
+										<circle cx="193" cy="27.6" r="10" />
+										<circle cx="248.1" cy="27.6" r="10" />
+										<circle cx="55.1" cy="55.1" r="10" />
+										<circle cx="110.3" cy="55.1" r="10" />
+										<circle cx="165.4" cy="55.1" r="10" />
+										<circle cx="220.5" cy="55.1" r="10" />
+										<circle cx="27.6" cy="82.7" r="10" />
+										<circle cx="82.7" cy="82.7" r="10" />
+										<circle cx="137.8" cy="82.7" r="10" />
+										<circle cx="193" cy="82.7" r="10" />
+										<circle cx="248.1" cy="82.7" r="10" />
+										<circle cx="55.1" cy="110.3" r="10" />
+										<circle cx="110.3" cy="110.3" r="10" />
+										<circle cx="165.4" cy="110.3" r="10" />
+										<circle cx="220.5" cy="110.3" r="10" />
+										<circle cx="27.6" cy="137.8" r="10" />
+										<circle cx="82.7" cy="137.8" r="10" />
+										<circle cx="137.8" cy="137.8" r="10" />
+										<circle cx="193" cy="137.8" r="10" />
+										<circle cx="248.1" cy="137.8" r="10" />
+										<circle cx="55.1" cy="165.4" r="10" />
+										<circle cx="110.3" cy="165.4" r="10" />
+										<circle cx="165.4" cy="165.4" r="10" />
+										<circle cx="220.5" cy="165.4" r="10" />
+										<circle cx="27.6" cy="193" r="10" />
+										<circle cx="82.7" cy="193" r="10" />
+										<circle cx="137.8" cy="193" r="10" />
+										<circle cx="193" cy="193" r="10" />
+										<circle cx="248.1" cy="193" r="10" />
+										<circle cx="55.1" cy="220.5" r="10" />
+										<circle cx="110.3" cy="220.5" r="10" />
+										<circle cx="165.4" cy="220.5" r="10" />
+										<circle cx="220.5" cy="220.5" r="10" />
+										<circle cx="27.6" cy="248.1" r="10" />
+										<circle cx="82.7" cy="248.1" r="10" />
+										<circle cx="137.8" cy="248.1" r="10" />
+										<circle cx="193" cy="248.1" r="10" />
+										<circle cx="248.1" cy="248.1" r="10" />
+									</g>
+								</svg>
+								USA
 							</span>
-							, 
+							,
 							<span class="country">
-							  <svg class="flag-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-								 <!-- USA Flag -->
-								 <rect fill="#fff" height="512" width="512"/>
-								 <g fill="#bf0a30">
-									<rect height="39.4" width="512" y="0"/>
-									<rect height="39.4" width="512" y="78.8"/>
-									<rect height="39.4" width="512" y="157.5"/>
-									<rect height="39.4" width="512" y="236.3"/>
-									<rect height="39.4" width="512" y="315"/>
-									<rect height="39.4" width="512" y="393.8"/>
-									<rect height="39.4" width="512" y="472.5"/>
-								 </g>
-								 <rect fill="#002868" height="275.7" width="275.7"/>
-								 <g fill="#fff">
-									<circle cx="27.6" cy="27.6" r="10"/>
-									<circle cx="82.7" cy="27.6" r="10"/>
-									<circle cx="137.8" cy="27.6" r="10"/>
-									<circle cx="193" cy="27.6" r="10"/>
-									<circle cx="248.1" cy="27.6" r="10"/>
-									<circle cx="55.1" cy="55.1" r="10"/>
-									<circle cx="110.3" cy="55.1" r="10"/>
-									<circle cx="165.4" cy="55.1" r="10"/>
-									<circle cx="220.5" cy="55.1" r="10"/>
-									<circle cx="27.6" cy="82.7" r="10"/>
-									<circle cx="82.7" cy="82.7" r="10"/>
-									<circle cx="137.8" cy="82.7" r="10"/>
-									<circle cx="193" cy="82.7" r="10"/>
-									<circle cx="248.1" cy="82.7" r="10"/>
-									<circle cx="55.1" cy="110.3" r="10"/>
-									<circle cx="110.3" cy="110.3" r="10"/>
-									<circle cx="165.4" cy="110.3" r="10"/>
-									<circle cx="220.5" cy="110.3" r="10"/>
-									<circle cx="27.6" cy="137.8" r="10"/>
-									<circle cx="82.7" cy="137.8" r="10"/>
-									<circle cx="137.8" cy="137.8" r="10"/>
-									<circle cx="193" cy="137.8" r="10"/>
-									<circle cx="248.1" cy="137.8" r="10"/>
-									<circle cx="55.1" cy="165.4" r="10"/>
-									<circle cx="110.3" cy="165.4" r="10"/>
-									<circle cx="165.4" cy="165.4" r="10"/>
-									<circle cx="220.5" cy="165.4" r="10"/>
-									<circle cx="27.6" cy="193" r="10"/>
-									<circle cx="82.7" cy="193" r="10"/>
-									<circle cx="137.8" cy="193" r="10"/>
-									<circle cx="193" cy="193" r="10"/>
-									<circle cx="248.1" cy="193" r="10"/>
-									<circle cx="55.1" cy="220.5" r="10"/>
-									<circle cx="110.3" cy="220.5" r="10"/>
-									<circle cx="165.4" cy="220.5" r="10"/>
-									<circle cx="220.5" cy="220.5" r="10"/>
-									<circle cx="27.6" cy="248.1" r="10"/>
-									<circle cx="82.7" cy="248.1" r="10"/>
-									<circle cx="137.8" cy="248.1" r="10"/>
-									<circle cx="193" cy="248.1" r="10"/>
-									<circle cx="248.1" cy="248.1" r="10"/>
-								 </g>
-							  </svg>
-							  USA,
-							</span>
-							<span class="country">
-							  <svg class="flag-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-								 <!-- UK Flag -->
-								 <rect fill="#012169" height="512" width="512"/>
-								 <path d="M0 0l512 512M512 0L0 512" stroke="#fff" stroke-width="102.4"/>
-								 <path d="M256 0v512M0 256h512" stroke="#fff" stroke-width="102.4"/>
-								 <path d="M0 0l512 512M512 0L0 512" stroke="#c8102e" stroke-width="68.3"/>
-								 <path d="M256 0v512M0 256h512" stroke="#c8102e" stroke-width="68.3"/>
-							  </svg>
-							  UK (+44 2034750329)
+								<svg class="flag-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256"
+									width="32" height="16">
+									<!-- Canada Flag -->
+									<rect width="512" height="256" fill="#fff" />
+									<rect width="128" height="256" fill="#d52b1e" />
+									<rect x="384" width="128" height="256" fill="#d52b1e" />
+									<path fill="#d52b1e"
+										d="M256 48l12 37h39l-31 22 12 37-31-22-31 22 12-37-31-22h39z" />
+								</svg>
+								Canada (+1 519 808 1000)
 							</span>
 						</li>
 					</ul>
@@ -1370,8 +1488,8 @@
 			<div class="main-box">
 				<div class="logo-box">
 					<div class="logo">
-						<a href="index.html"><img src="images/logo-2.png" alt="Software Company London, Ontario, Canada"
-						   title="Tronis" /></a>
+						<a href="index.html"><img src="images/logo-2.png"
+								alt="Software Company London, Ontario, Canada" title="Tronis" /></a>
 					</div>
 				</div>
 				<!--Nav Box-->
@@ -1388,15 +1506,15 @@
 				</div>
 				<div class="outer-box outer-box--padding">
 					<!-- <div class="ui-btn-outer">
-						<i class="icon fa fa-email"></i>
-						<small>Email us : </small>
-						<a href="mailto:info@acesoft.ca">info@acesoft.ca</a>
-						</div>
-						
-						<a href="tel:+15198081000" class="info-btn">
-						<i class="icon fa fa-phone"></i>
-						<small>Give us a call</small>+1 519 808 1000
-						</a> -->
+					<i class="icon fa fa-email"></i>
+					<small>Email us : </small>
+					<a href="mailto:info@acesoft.ca">info@acesoft.ca</a>
+					</div>
+
+					<a href="tel:+15198081000" class="info-btn">
+					<i class="icon fa fa-phone"></i>
+					<small>Give us a call</small>+1 519 808 1000
+					</a> -->
 					<!-- Mobile Nav toggler -->
 					<div class="mobile-nav-toggler">
 						<span class="icon lnr-icon-bars"></span>
@@ -1412,8 +1530,8 @@
 				<div class="upper-box">
 					<div class="nav-logo">
 						<a href="index.html"><img src="images/logo.png"
-						   alt="Mobile App Development, Web application Development, Hire Developers and software engineers"
-						   title="" /></a>
+								alt="Mobile App Development, Web application Development, Hire Developers and software engineers"
+								title="" /></a>
 					</div>
 					<div class="close-btn"><i class="icon fa fa-times"></i></div>
 				</div>
@@ -1453,7 +1571,7 @@
 		<div class="search-popup">
 			<span class="search-back-drop"></span>
 			<button class="close-search">
-			<span class="fa fa-times"></span>
+				<span class="fa fa-times"></span>
 			</button>
 			<div class="search-inner">
 				<form method="post" action="blog-showcase.html">
@@ -1472,7 +1590,7 @@
 					<!--Logo-->
 					<div class="logo">
 						<a href="index.html" title=""><img src="images/logo-2.png"
-						   alt="Mobile Application Development Company London Ontario" title="" /></a>
+								alt="Mobile Application Development Company London Ontario" title="" /></a>
 					</div>
 					<!--Right Col-->
 					<div class="nav-outer">
@@ -1543,97 +1661,53 @@
 	</section>
 	<!-- End Banner Section -->
 
-	 <!-- Services Section Three -->
-	<section class="services-section-three acesoft-services-section">
-		<div class="auto-container">
-			<div class="services-heading-wrap row align-items-end">
-				<div class="col-lg-8">
-					<div class="sec-title">
-						<span class="sub-title"><i class="fa fa-layer-group"></i> Acesoft Services</span>
-						<h2>End-to-end mobile app services<br>for every stage of growth.</h2>
-						<div class="services-intro-text">
-							From product planning to post-launch optimization, Acesoft delivers complete mobile app development services for startups, SMBs, and enterprises.
-						</div>
-					</div>
+	<section class="as-services" id="acesoftServices">
+		<div class="as-container">
+			<div class="as-header">
+				<div class="as-header-left">
+					<div class="as-label"><span class="as-label-dot"></span>Acesoft Services</div>
+					<h2 class="as-title">End-to-end mobile app services<br>for <em>every stage of growth.</em></h2>
+					<p class="as-subtitle">From product planning to post-launch optimization, Acesoft delivers complete mobile development services for startups, SMBs, and enterprises worldwide.</p>
 				</div>
-				<div class="col-lg-4 text-lg-end text-left mt-4 mt-lg-0">
-					<a href="page-contact.html" class="services-cta">Discuss Your Project</a>
-				</div>
+				<a href="page-contact.html" class="as-cta-btn">Discuss Your Project
+					<svg fill="none" viewBox="0 0 20 20" width="16" height="16"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
 			</div>
-
-			<div class="row">
-				<!-- Service Block-three -->
-				<div class="service-block-three col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-					<div class="inner-box">
-						<div class="content">
-							<span class="service-chip">Discovery</span>
-							<div class="icon-box"><i class="icon flaticon-online-shopping"></i></div>
-							<h5 class="title"><a href="ios-android-mobile-app-development.html">Product Strategy <br>& Roadmapping</a></h5>
-							<div class="text">Validate ideas, define MVP scope, and plan scalable app architecture with clear business goals.</div>
-						</div>
-					</div>
+			<!-- <div class="as-stats-bar">
+				<div class="as-stat"><div class="as-stat-num"><span id="stat-apps">0</span>+</div><div class="as-stat-label">Apps Delivered</div></div>
+				<div class="as-stat"><div class="as-stat-num"><span id="stat-sat">0</span>%</div><div class="as-stat-label">Client Satisfaction</div></div>
+				<div class="as-stat"><div class="as-stat-num"><span id="stat-yrs">0</span>+</div><div class="as-stat-label">Years of Delivery</div></div>
+				<div class="as-stat"><div class="as-stat-num">24<span style="-webkit-text-fill-color:inherit;background:none;font-size:22px;">x7</span></div><div class="as-stat-label">Global Coverage</div></div>
+			</div> -->
+			<div class="as-filters">
+				<span class="as-filter-label">View for:</span>
+				<button class="as-filter active" data-filter="all">All Services</button>
+				<button class="as-filter" data-filter="startup">Startups</button>
+				<button class="as-filter" data-filter="enterprise">Enterprise</button>
+				<button class="as-filter" data-filter="design">Design-First</button>
+			</div>
+			<div class="as-cards-grid" id="asCardsGrid">
+				<div class="as-card theme-blue" data-filter="all startup enterprise" data-visible="true"><div class="as-card-accent"></div><span class="as-card-phase">01</span><span class="as-stage-chip"><svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg>Discovery</span><div class="as-icon-box"><svg fill="none" viewBox="0 0 26 26" style="color:currentColor"><rect x="2" y="2" width="10" height="10" rx="2.5" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="2" width="10" height="10" rx="2.5" stroke="currentColor" stroke-width="1.8"/><rect x="2" y="14" width="10" height="10" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M14 19h10M19 14v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h4 class="as-card-title">Product Strategy &amp; Roadmapping</h4><p class="as-card-desc">Validate ideas, define MVP scope, and plan scalable app architecture aligned with clear business goals and market opportunities.</p><div class="as-deliverables"><div class="as-deliver-list"><span class="as-deliver-tag">MVP Blueprint</span><span class="as-deliver-tag">Market Research</span><span class="as-deliver-tag">Tech Stack Advice</span><span class="as-deliver-tag">Sprint Roadmap</span></div>
+				
+			</div></div>
+				<div class="as-card theme-violet" data-filter="all startup design" data-visible="true"><div class="as-card-accent"></div><span class="as-card-phase">02</span><span class="as-stage-chip"><svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg>Design</span><div class="as-icon-box"><svg fill="none" viewBox="0 0 26 26" style="color:currentColor"><circle cx="13" cy="13" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M8 13h10M13 8v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="13" cy="13" r="3" stroke="currentColor" stroke-width="1.5"/></svg></div><h4 class="as-card-title">Mobile UI/UX Design</h4><p class="as-card-desc">Craft intuitive user journeys, modern interfaces, and design systems that delight users and drive retention across both platforms.</p><div class="as-deliverables"><div class="as-deliver-list"><span class="as-deliver-tag">Wireframes</span><span class="as-deliver-tag">Figma Prototypes</span><span class="as-deliver-tag">Design System</span><span class="as-deliver-tag">Usability Testing</span></div>
+				
+			</div></div>
+				<div class="as-card theme-teal" data-filter="all enterprise" data-visible="true"><div class="as-card-accent"></div><span class="as-card-phase">03</span><span class="as-stage-chip"><svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg>Native Apps</span><div class="as-icon-box"><svg fill="none" viewBox="0 0 26 26" style="color:currentColor"><rect x="7" y="2" width="12" height="22" rx="2.5" stroke="currentColor" stroke-width="1.8"/><circle cx="13" cy="20" r="1" fill="currentColor"/><path d="M10 5h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><h4 class="as-card-title">iOS &amp; Android App Development</h4><p class="as-card-desc">Build secure, high-performance native applications tailored to platform-specific guidelines, APIs, and user experiences.</p><div class="as-deliverables"><div class="as-deliver-list"><span class="as-deliver-tag">Swift / Kotlin</span><span class="as-deliver-tag">Store Launch</span><span class="as-deliver-tag">Native APIs</span><span class="as-deliver-tag">Push Notifications</span></div></div></div>
+				<div class="as-card theme-amber" data-filter="all startup enterprise" data-visible="true"><div class="as-card-accent"></div><span class="as-card-phase">04</span><span class="as-stage-chip"><svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg>Cross-Platform</span><div class="as-icon-box"><svg fill="none" viewBox="0 0 26 26" style="color:currentColor"><path d="M5 13h16M13 5l8 8-8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 8v10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h4 class="as-card-title">Flutter &amp; React Native Development</h4><p class="as-card-desc">Deliver faster across iOS and Android from a single shared codebase, with near-native performance and a consistent experience.</p><div class="as-deliverables"><div class="as-deliver-list"><span class="as-deliver-tag">Flutter</span><span class="as-deliver-tag">React Native</span><span class="as-deliver-tag">Single Codebase</span><span class="as-deliver-tag">Faster GTM</span></div></div></div>
+				<div class="as-card theme-coral" data-filter="all enterprise" data-visible="true"><div class="as-card-accent"></div><span class="as-card-phase">05</span><span class="as-stage-chip"><svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg>Testing</span><div class="as-icon-box"><svg fill="none" viewBox="0 0 26 26" style="color:currentColor"><path d="M4 6h18M4 13h12M4 20h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="20" cy="19" r="4" stroke="currentColor" stroke-width="1.6"/><path d="M22.5 21.5l2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><h4 class="as-card-title">QA &amp; Performance Engineering</h4><p class="as-card-desc">Ensure reliability with comprehensive functional, device, performance, and regression testing embedded throughout every sprint.</p><div class="as-deliverables"><div class="as-deliver-list"><span class="as-deliver-tag">Automated Testing</span><span class="as-deliver-tag">Load Testing</span><span class="as-deliver-tag">Device Lab</span><span class="as-deliver-tag">Bug Triage</span></div></div></div>
+				<div class="as-card theme-indigo" data-filter="all startup enterprise" data-visible="true"><div class="as-card-accent"></div><span class="as-card-phase">06</span><span class="as-stage-chip"><svg width="10" height="10" viewBox="0 0 10 10"><circle cx="5" cy="5" r="4" fill="currentColor"/></svg>Growth</span><div class="as-icon-box"><svg fill="none" viewBox="0 0 26 26" style="color:currentColor"><path d="M3 20l6-6 4 4 10-12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="13" cy="4" r="2.5" stroke="currentColor" stroke-width="1.6"/></svg></div><h4 class="as-card-title">Maintenance &amp; App Modernization</h4><p class="as-card-desc">Scale and continuously improve your app post-launch with OS updates, performance monitoring, and feature optimization cycles.</p><div class="as-deliverables"><div class="as-deliver-list"><span class="as-deliver-tag">Crash Monitoring</span><span class="as-deliver-tag">OS Updates</span><span class="as-deliver-tag">Analytics Setup</span><span class="as-deliver-tag">Retainer Plans</span></div></div></div>
+			</div>
+		
+			<div class="as-bottom-cta">
+				<div class="as-cta-text">
+					<h3>Ready to build something exceptional?</h3>
+					<p>Talk to our team - we'll respond within one business day.</p>
 				</div>
-
-				<!-- Service Block-three -->
-				<div class="service-block-three col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-					<div class="inner-box">
-						<div class="content">
-							<span class="service-chip">Design</span>
-							<div class="icon-box"><i class="icon flaticon-design"></i></div>
-							<h5 class="title"><a href="ios-android-mobile-app-development.html">Mobile UI/UX <br>Design</a></h5>
-							<div class="text">Craft intuitive user journeys, modern interfaces, and design systems that improve retention.</div>
-						</div>
-					</div>
+				<div class="as-cta-actions">
+					<a href="page-contact.html" class="as-btn-white">Book a Free Consultation</a>
+					<a href="tel:+15198081000" class="as-btn-ghost-white">+1 519 808 1000</a>
 				</div>
-
-				<!-- Service Block-three -->
-				<div class="service-block-three col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-					<div class="inner-box">
-						<div class="content">
-							<span class="service-chip">Native Apps</span>
-							<div class="icon-box"><i class="icon flaticon-brain"></i></div>
-							<h5 class="title"><a href="ios-android-mobile-app-development.html">iOS & Android <br>App Development</a></h5>
-							<div class="text">Build secure, high-performance native applications tailored to platform-specific experiences.</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Service Block-three -->
-				<div class="service-block-three col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-					<div class="inner-box">
-						<div class="content">
-							<span class="service-chip">Cross-Platform</span>
-							<div class="icon-box"><i class="icon flaticon-reputation"></i></div>
-							<h5 class="title"><a href="ios-android-mobile-app-development.html">Flutter & React Native <br>Development</a></h5>
-							<div class="text">Deliver faster across iOS and Android with a shared codebase and consistent user experience.</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Service Block-three -->
-				<div class="service-block-three col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-					<div class="inner-box">
-						<div class="content">
-							<span class="service-chip">Testing</span>
-							<div class="icon-box"><i class="icon flaticon-discuss"></i></div>
-							<h5 class="title"><a href="ios-android-mobile-app-development.html">QA & Performance <br>Engineering</a></h5>
-							<div class="text">Ensure reliability with functional, device, performance, and regression testing workflows.</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Service Block-three -->
-				<div class="service-block-three col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
-					<div class="inner-box">
-						<div class="content">
-							<span class="service-chip">Growth</span>
-							<div class="icon-box"><i class="icon flaticon-front-end"></i></div>
-							<h5 class="title"><a href="ios-android-mobile-app-development.html">Maintenance & <br>App Modernization</a></h5>
-							<div class="text">Scale and improve your app post-launch with updates, monitoring, and continuous optimization.</div>
-						</div>
-					</div>
-				</div>
-
 			</div>
 		</div>
 	</section>
@@ -1840,86 +1914,7 @@
 		</div>
 	</section>
 
-	<!-- Main Footer -->
-	<footer class="main-footer">
-		<div class="bg bg-pattern-9"></div>
-		<div class="auto-container"></div>
-		<!--Widgets Section-->
-		<div class="widgets-section">
-			<div class="auto-container">
-				<div class="row">
-					<!--Footer Column-->
-					<div class="footer-column col-xl-3 col-lg-12 col-md-12">
-						<div class="footer-widget about-widget">
-							<div class="logo">
-								<a href="index.html">
-								<img src="images/logo.png" alt="Acesoft Inc" /></a>
-								<img src="images/acesoft/iso-certified.png" alt="ISO Certified Software Development Company Canada" />
-							</div>
-							<div class="text">
-								Unlocking Innovation.
-							</div>
-						</div>
-					</div>
-					<!--Footer Column-->
-					<div class="footer-column col-xl-3 col-lg-4 col-md-4">
-						<div class="footer-widget links-widget">
-							<h6 class="widget-title">Explore</h6>
-							<ul class="user-links">
-								<li><a href="enterprise-applications-development.html">Enterprise Application Development</a></li>
-								<li><a href="ios-android-mobile-app-development.html">Mobile Application Development</a></li>
-								<li><a href="ai-development-company.html">Artificial Intelligence</a></li>
-								<li><a href="business-process-outsourcing-company-bpo-services.html">BPO Services</a></li>
-								<li><a href="bpo-backoffice-support-company.html">Customer Service</a></li>
-								<li><a href="hire-software-developers-team.html">Hire Software Developers</a></li>
-							</ul>
-						</div>
-					</div>
-					<!--Footer Column-->
-					<div class="footer-column col-xl-3 col-lg-4 col-md-4 col-sm-8">
-						<div class="footer-widget gallery-widget">
-							<h6 class="widget-title">Office locations : 24 X 7 X 365 </h6>
-							<img src="images/acesoft/acesoft-locations.png" alt="Acesoft Inc Locations" width="300" height="275">
-						</div>
-					</div>
-					<!--Footer Column-->
-					<div class="footer-column col-xl-3 col-lg-4 col-md-4">
-						<div class="footer-widget contacts-widget">
-							<h6 class="widget-title">Contact</h6>
-							<div class="text">
-								200 Villagewalk Blvd Suite 304, London, ON N6G 0W8
-							</div>
-							<ul class="contact-info">
-								<li>
-									<i class="fa fa-envelope"></i>
-									<a href="mailto:info@acesoft.ca">info@acesoft.ca</a><br />
-								</li>
-								<li>
-									<i class="fa fa-phone-square"></i>
-									<a href="tel:+15198081000">+1 519 808 1000</a><br />
-								</li>
-							</ul>
-							<div class="btn-box animate-3">
-								<a href="page-contact.html" class="theme-btn btn-style-one"><span class="btn-title">Contact
-								Us</span></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!--Footer Bottom-->
-		<div class="footer-bottom">
-			<div class="auto-container">
-				<div class="inner-container">
-					<div class="copyright-text">
-						&copy; Copyright <span id="currentYear"></span> by <a href="index.html">Acesoft.ca</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!--End Main Footer -->
+	<div id="footer-root"></div>
 
 </div><!-- End Page Wrapper -->
 
@@ -1949,11 +1944,22 @@
 <script src="js/knob.js"></script>
 <script src="js/select2.min.js"></script>
 <script src="js/owl.js"></script>
+<script src="js/acesoft-services-component.js"></script>
 <script src="js/script.js"></script>
 <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
 <script>
-	var currentYear = new Date().getFullYear();
-	document.getElementById("currentYear").innerText = currentYear;
+	(function () {
+		var root = document.getElementById("footer-root");
+		if (!root) return;
+		fetch("footer.html")
+			.then(function (res) { return res.text(); })
+			.then(function (html) {
+				root.innerHTML = html;
+				var year = root.querySelector("#currentYear");
+				if (year) year.innerText = new Date().getFullYear();
+			})
+			.catch(function () {});
+	})();
 </script>
 <script>
 	(function () {
