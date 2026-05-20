@@ -1386,7 +1386,7 @@
 		animation-delay: 1.2s;
 	}
 	.container-preloader .loader-section {
-		background-color: #ffffff;
+		background-color: #040812;
 		height: 100%;
 		position: fixed;
 		top: 0;
@@ -1403,12 +1403,12 @@
 		transition: 0.3s ease-out;
 	}
 	.loaded .loader-section.section-left {
-		transform: translateX(-101%);
-		transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1);
+		opacity: 0;
+		transition: opacity 0.22s ease-out;
 	}
 	.loaded .loader-section.section-right {
-		transform: translateX(101%);
-		transition: 0.7s 0.3s all cubic-bezier(0.1, 0.1, 0.1, 1);
+		opacity: 0;
+		transition: opacity 0.22s ease-out;
 	}
 	@keyframes logoSlide {
 		from {
