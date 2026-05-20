@@ -1307,18 +1307,31 @@
 	.logo-slide img:hover {
 		transform: translateY(-2px);
 	}
-	/* Reference-style preloader */
+	/* Reference-style preloader — always above header */
+	#preloader {
+		position: fixed;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 999999;
+		pointer-events: auto;
+	}
+	html.is-preloading {
+		overflow: hidden;
+	}
+	html.is-preloading body {
+		background: #040812;
+	}
 	.container-preloader {
 		align-items: center;
 		cursor: none;
 		display: flex;
 		height: 100%;
 		justify-content: center;
-		position: fixed;
-		left: 0;
-		top: 0;
+		position: absolute;
+		inset: 0;
 		width: 100%;
-		z-index: 900;
+		z-index: 1;
 	}
 	.container-preloader .animation-preloader {
 		position: absolute;
@@ -1449,7 +1462,8 @@
 /* Above-the-fold only: header + hero grid (Lighthouse — avoid blocking bootstrap/style) */
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;color:#1a2444;background:#050816}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;color:#1a2444;background:#040812}
+.main-header.header-style-one{position:relative;z-index:1000;background:radial-gradient(circle at 50% 0%,#23429f 0%,#101b43 40%,#070d21 80%,#040812 100%)}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
 ul{margin:0;padding:0;list-style:none}
@@ -1463,15 +1477,16 @@ ul{margin:0;padding:0;list-style:none}
   .col-lg-7{flex:0 0 58.333333%;max-width:58.333333%}
 }
 .page-wrapper{position:relative;overflow:visible}
-.main-header.header-style-one{position:relative;z-index:1000;background:radial-gradient(circle at 50% 0%,#23429f 0%,#101b43 40%,#070d21 80%,#040812 100%)}
-.main-header .main-box{display:flex;align-items:center;min-height:96px;background:rgba(8,12,24,.46);backdrop-filter:blur(8px)}
+.main-header .main-box{display:grid;grid-template-columns:minmax(160px,1fr) auto minmax(160px,1fr);align-items:center;min-height:96px;width:100%;background:rgba(8,12,24,.46);backdrop-filter:blur(8px)}
+.main-header .logo-box{justify-self:start}
 .main-header .logo img{max-height:66px;width:auto}
-.main-header .nav-outer{margin-left:auto}
-.main-header .navigation{display:flex;gap:4px;align-items:center}
+.main-header .nav-outer{justify-self:center;margin-left:0!important;width:auto}
+.main-header .navigation{display:flex;gap:4px;align-items:center;justify-content:center}
+.main-header .outer-box{justify-self:end}
 .main-header .navigation>li>a{display:block;padding:10px 14px;color:rgba(230,238,255,.9);font-size:15px;font-weight:500}
 .main-header .outer-box{display:flex;align-items:center}
 .mobile-nav-toggler{display:none;cursor:pointer;color:#fff;font-size:22px}
-@media(max-width:991px){.mobile-nav-toggler{display:block}.main-header .nav.main-menu{display:none}}
+@media(max-width:991px){.mobile-nav-toggler{display:block}.main-header .nav.main-menu{display:none}.main-header .main-box{grid-template-columns:1fr auto}.main-header .nav-outer{display:none}}
 /* Header top bar */
 .header-top {
   background: rgba(8, 12, 24, 0.5);
@@ -1717,6 +1732,7 @@ ul{margin:0;padding:0;list-style:none}
 <link rel="stylesheet" href="css/fontawesome-home.css" media="print" data-async onload="this.media='all'">
 <link rel="stylesheet" href="css/acesoft-about-overrides.css" media="print" data-async onload="this.media='all'">
 <link rel="stylesheet" href="css/accessibility-home.css" media="print" data-async onload="this.media='all'">
+<link rel="stylesheet" href="css/header-centered-nav.css" media="print" data-async onload="this.media='all'">
 <noscript>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap">
 <link rel="stylesheet" href="css/bootstrap.home.css">
@@ -1729,11 +1745,13 @@ ul{margin:0;padding:0;list-style:none}
 <link rel="stylesheet" href="css/fontawesome-home.css">
 <link rel="stylesheet" href="css/acesoft-about-overrides.css">
 <link rel="stylesheet" href="css/accessibility-home.css">
+<link rel="stylesheet" href="css/header-centered-nav.css">
 </noscript>
 <script src="js/async-css.js" defer></script>
 </head>
 
 <body>
+<script>document.documentElement.classList.add("is-preloading");</script>
 
 <div id="preloader">
 	<div id="container-preloader" class="container-preloader">
@@ -2341,15 +2359,40 @@ ul{margin:0;padding:0;list-style:none}
 	});
 </script>
 <script>
-	window.addEventListener("load", function () {
+	(function () {
 		var preloader = document.getElementById("preloader");
 		var container = document.getElementById("container-preloader");
-		if (!preloader || !container) return;
-		container.classList.add("loaded");
-		window.setTimeout(function () {
-			preloader.style.display = "none";
-		}, 1100);
-	});
+		var finished = false;
+		var started = Date.now();
+		var MIN_SHOW_MS = 450;
+		var EXIT_MS = 900;
+
+		function finishPreloader() {
+			if (finished) return;
+			finished = true;
+			document.documentElement.classList.remove("is-preloading");
+			document.documentElement.style.overflow = "";
+			if (!preloader || !container) return;
+			container.classList.add("loaded");
+			window.setTimeout(function () {
+				preloader.style.display = "none";
+			}, EXIT_MS);
+		}
+
+		function scheduleFinish() {
+			var elapsed = Date.now() - started;
+			var wait = Math.max(0, MIN_SHOW_MS - elapsed);
+			window.setTimeout(finishPreloader, wait);
+		}
+
+		if (document.readyState === "loading") {
+			document.addEventListener("DOMContentLoaded", scheduleFinish);
+		} else {
+			scheduleFinish();
+		}
+		/* Safety: never keep loader longer than 2.5s */
+		window.setTimeout(finishPreloader, 2500);
+	})();
 </script>
 <script src="js/whatsapp-float.js" defer></script>
 <script type="application/ld+json">

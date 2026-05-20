@@ -1,0 +1,46 @@
+/**
+ * Logo left, navigation centered (reference layout).
+ */
+.main-header.header-style-one .container-fluid {
+  max-width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.main-header.header-style-one .main-box {
+  display: grid !important;
+  grid-template-columns: minmax(160px, 1fr) auto minmax(160px, 1fr) !important;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+}
+
+.main-header.header-style-one .logo-box {
+  justify-self: start;
+}
+
+.main-header.header-style-one .nav-outer {
+  justify-self: center;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: auto;
+}
+
+.main-header.header-style-one .nav-outer .navigation {
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.main-header.header-style-one .outer-box {
+  justify-self: end;
+}
+
+@media (max-width: 991px) {
+  .main-header.header-style-one .main-box {
+    grid-template-columns: 1fr auto;
+  }
+
+  .main-header.header-style-one .nav-outer {
+    display: none;
+  }
+}
