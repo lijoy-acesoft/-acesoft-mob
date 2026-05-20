@@ -49,6 +49,8 @@
 <link rel="preload" as="image" href="images/main-slider/5-272.webp" type="image/webp" fetchpriority="high"
 	imagesrcset="images/main-slider/5-210.webp 210w, images/main-slider/5-272.webp 272w, images/main-slider/5-300.webp 300w, images/main-slider/5-544.webp 544w"
 	imagesizes="(max-width: 576px) 182px, (max-width: 991px) 212px, (max-width: 1199px) 242px, 272px">
+<link rel="preload" href="fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/flaticon_agency.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 	/* ============================================
 	   PREMIUM HERO BANNER - London, Ontario Focus
@@ -1462,7 +1464,7 @@
 /* Above-the-fold only: header + hero grid (Lighthouse — avoid blocking bootstrap/style) */
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;color:#1a2444;background:#040812}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;color:#1a2444;background-color:#040812!important}
 .main-header.header-style-one{position:relative;z-index:1000;background:radial-gradient(circle at 50% 0%,#23429f 0%,#101b43 40%,#070d21 80%,#040812 100%)}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
@@ -1716,6 +1718,75 @@ ul{margin:0;padding:0;list-style:none}
   .header-top .top-left .list-style-one > li:nth-child(2),
   .header-top .top-left .list-style-one > li:nth-child(3) {
     display: none;
+  }
+}
+
+/* CLS + font-display: lock hero/header when async home CSS loads */
+body {
+  background-color: #040812 !important;
+}
+.banner-section-two.acesoft-hero .content-box .title,
+.banner-section-two.acesoft-hero .content-box h1.title {
+  font-size: 64px;
+  line-height: 1.05;
+  margin-bottom: 22px;
+  color: #fff !important;
+  font-weight: 800;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+.acesoft-hero .content-box h1.title {
+  min-height: 12.5rem;
+}
+.acesoft-hero .hero-description {
+  min-height: 5.5rem;
+}
+.header-top .fa,
+.header-top .fa-solid,
+.header-top .fas,
+.acesoft-hero .fa,
+.acesoft-hero .fa-solid,
+.acesoft-hero .fas {
+  display: inline-block;
+  min-width: 1em;
+  text-align: center;
+}
+@media (max-width: 1199px) {
+  .banner-section-two.acesoft-hero .content-box .title,
+  .banner-section-two.acesoft-hero .content-box h1.title {
+    font-size: 52px;
+  }
+  .acesoft-hero .content-box h1.title {
+    min-height: 10rem;
+  }
+}
+@media (max-width: 991px) {
+  .banner-section-two.acesoft-hero .content-box .title,
+  .banner-section-two.acesoft-hero .content-box h1.title {
+    font-size: 44px;
+  }
+  .acesoft-hero .content-box h1.title {
+    min-height: 8.5rem;
+  }
+}
+@media (max-width: 576px) {
+  .banner-section-two.acesoft-hero .content-box .title,
+  .banner-section-two.acesoft-hero .content-box h1.title {
+    font-size: 34px;
+  }
+  .acesoft-hero .content-box h1.title {
+    min-height: 7rem;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .acesoft-hero .hero-overlay:before,
+  .acesoft-hero .hero-overlay:after {
+    animation: none;
+  }
+  html.hero-motion-ready .acesoft-hero .hero-overlay:before {
+    animation: heroOrbDrift 14s ease-in-out infinite;
+  }
+  html.hero-motion-ready .acesoft-hero .hero-overlay:after {
+    animation: heroOrbDrift 16s ease-in-out infinite reverse;
   }
 }
 </style>
@@ -2371,6 +2442,7 @@ ul{margin:0;padding:0;list-style:none}
 			if (finished) return;
 			finished = true;
 			document.documentElement.classList.remove("is-preloading");
+			document.documentElement.classList.add("hero-motion-ready");
 			document.documentElement.style.overflow = "";
 			if (!preloader || !container) return;
 			container.classList.add("loaded");

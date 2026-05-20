@@ -45,7 +45,17 @@ function buildFontAwesomeHome() {
 function buildFlaticonHome() {
   const src = fs.readFileSync(path.join(CSS_DIR, "flaticon.css"), "utf8");
   const headEnd = src.indexOf(".flaticon-discuss:before");
-  const head = src.slice(0, headEnd);
+  let head = src.slice(0, headEnd);
+  if (!/font-display\s*:/.test(head)) {
+    head = head.replace(
+      /@font-face\s*\{/,
+      '@font-face {\n    font-display: swap;'
+    );
+  }
+  head = head.replace(
+    /src:\s*url\("\.\.\/fonts\/flaticon_agency\.ttf"\)[^;]+;/,
+    'src: url("../fonts/flaticon_agency.woff2") format("woff2"),\n        url("../fonts/flaticon_agency.woff") format("woff"),\n        url("../fonts/flaticon_agency.ttf") format("truetype"),\n        url("../fonts/flaticon_agency.eot") format("embedded-opentype"),\n        url("../fonts/flaticon_agency.svg") format("svg");'
+  );
   let icons = "";
   for (const cls of FLAT_ICONS) {
     const re = new RegExp(`\\.${cls}:before\\s*\\{[^}]+\\}`, "m");
