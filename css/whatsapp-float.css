@@ -1,0 +1,160 @@
+/* Floating WhatsApp — above scroll-to-top */
+.acesoft-wa-widget {
+  position: fixed;
+  right: 20px;
+  bottom: 76px;
+  z-index: 150;
+  display: none;
+  align-items: flex-end;
+  gap: 10px;
+  font-family: inherit;
+}
+
+.acesoft-wa-widget.is-visible {
+  display: inline-flex;
+}
+
+.acesoft-wa-widget.no-scroll-top {
+  bottom: 20px;
+}
+
+.acesoft-wa-button {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 28px rgba(17, 31, 55, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+  text-decoration: none;
+  overflow: visible;
+}
+
+.acesoft-wa-button:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(17, 31, 55, 0.34);
+}
+
+.acesoft-wa-icon-svg {
+  width: 30px;
+  height: 30px;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Stacked message bubbles badge */
+.acesoft-wa-msg-stack {
+  position: absolute;
+  top: -2px;
+  left: -4px;
+  width: 28px;
+  height: 24px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.acesoft-wa-msg-stack .acesoft-wa-msg-svg {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  padding: 3px;
+  border-radius: 50%;
+  background: #128c7e;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+  box-sizing: content-box;
+}
+
+.acesoft-wa-msg-stack .acesoft-wa-msg-svg:first-child {
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.acesoft-wa-msg-stack .acesoft-wa-msg-svg:last-child {
+  top: 8px;
+  left: 10px;
+  z-index: 1;
+  transform: scale(0.9);
+  opacity: 0.95;
+}
+
+.acesoft-wa-prompt {
+  background: #ffffff;
+  color: #12305f;
+  border-radius: 18px;
+  padding: 9px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  box-shadow: 0 10px 24px rgba(9, 24, 52, 0.2);
+  max-width: 240px;
+  text-decoration: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.acesoft-wa-prompt:hover {
+  color: #0e2f63;
+}
+
+.acesoft-wa-prompt.is-fade {
+  opacity: 0;
+  transform: translateY(3px);
+}
+
+.acesoft-wa-prompt-close {
+  position: absolute;
+  top: -6px;
+  right: 58px;
+  width: 22px;
+  height: 22px;
+  border: 0;
+  border-radius: 50%;
+  background: #12305f;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.acesoft-wa-widget.is-prompt-hidden .acesoft-wa-prompt,
+.acesoft-wa-widget.is-prompt-hidden .acesoft-wa-prompt-close {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .acesoft-wa-widget {
+    right: 14px;
+    bottom: 72px;
+  }
+
+  .acesoft-wa-widget.no-scroll-top {
+    bottom: 16px;
+  }
+
+  .acesoft-wa-prompt {
+    max-width: 185px;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .acesoft-wa-button {
+    width: 52px;
+    height: 52px;
+  }
+
+  .acesoft-wa-icon-svg {
+    width: 28px;
+    height: 28px;
+  }
+}

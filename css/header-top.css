@@ -1,0 +1,231 @@
+/* Header top bar */
+.header-top {
+  background: rgba(8, 12, 24, 0.5);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.header-top .inner-container {
+  min-height: 48px;
+  margin: 0 auto;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.header-top .top-left {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.header-top .top-right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.header-top .top-left .list-style-one {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.header-top .top-left .list-style-one > li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 5px 11px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(150, 186, 255, 0.24);
+  color: #eef4ff;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.header-top .top-left .list-style-one > li i {
+  color: #8ec0ff;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.header-top .top-left .list-style-one > li a:not(.header-phone-num) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header-top .top-left .list-style-one > li a:not(.header-phone-num):hover {
+  color: #fff;
+}
+
+/* Global offices row */
+.header-top .top-left .list-style-one > li.header-top-phones {
+  padding: 5px 9px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.header-top-phones-row {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 25px;
+}
+
+.header-top .country-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 7px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  line-height: 1.25;
+}
+
+.header-top .country-chip--phone {
+  gap: 6px;
+  padding: 3px 9px 3px 7px;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(150, 186, 255, 0.22);
+}
+
+.header-top .country-chip-body {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: nowrap;
+}
+
+.header-top .flag-icon {
+  display: block;
+  width: 21px;
+  height: 14px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* India flag uses 3:2 aspect ratio — avoid object-fit crop */
+.header-top .flag-icon--india {
+  width: 21px;
+  height: 14px;
+}
+
+.header-top .country-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f8fbff;
+  letter-spacing: 0.01em;
+}
+
+.header-top .header-phone-num {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ff95a5 !important;
+  text-decoration: none !important;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.header-top .header-phone-num:hover {
+  color: #ffc4cc !important;
+  text-decoration: underline !important;
+}
+
+.header-top .top-right .useful-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.header-top .top-right .useful-links li a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 7px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
+  border: 1px solid rgba(143, 186, 255, 0.35);
+  background: linear-gradient(135deg, #3d67dd 0%, #5a86ff 100%);
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.header-top .top-right .useful-links li a:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+@media (max-width: 1200px) {
+  .header-top-phones-row {
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+}
+
+@media (max-width: 991px) {
+  .header-top .inner-container {
+    min-height: 46px;
+    padding: 6px 12px;
+  }
+
+  .header-top .top-left .list-style-one > li {
+    font-size: 12px;
+    min-height: 32px;
+    padding: 4px 9px;
+  }
+
+  .header-top .country-name,
+  .header-top .header-phone-num {
+    font-size: 12px;
+  }
+
+  .header-top .flag-icon {
+    width: 19px;
+    height: 13px;
+  }
+
+  .header-top .top-left .list-style-one > li i {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header-top .top-left .list-style-one > li:nth-child(4) {
+    display: none;
+  }
+
+  .header-top .top-left .list-style-one > li.header-top-phones {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .header-top .top-left .list-style-one > li:nth-child(2),
+  .header-top .top-left .list-style-one > li:nth-child(3) {
+    display: none;
+  }
+}

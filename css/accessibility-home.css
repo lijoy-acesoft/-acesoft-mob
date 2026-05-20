@@ -1,0 +1,44 @@
+/**
+ * Homepage accessibility fixes (Lighthouse).
+ */
+.acesoft-hero .hero-description {
+  color: #e2e8f0;
+}
+
+.acesoft-hero .trust-item .trust-label {
+  color: #e2e8f0;
+}
+
+.acesoft-services-section .sec-title .sub-title,
+.as-services .as-label {
+  color: #2a4499;
+}
+
+.acesoft-services-section .services-intro-text,
+.as-services .as-subtitle {
+  color: #4a556f;
+}
+
+.as-services .as-card-desc,
+.as-services .as-filter-label {
+  color: #4a556f;
+}
+
+.as-services .as-stat-label {
+  color: rgba(210, 225, 255, 0.9);
+}
+
+.acesoft-about-section .sec-title .text,
+.acesoft-about-section .about-actions .info-btn small {
+  color: #4a556f;
+}
+
+.acesoft-e3-process-section .e3-card p,
+.acesoft-e3-process-section .step-content p {
+  color: rgba(228, 236, 255, 0.92);
+}
+
+.acesoft-highlights-section .sec-title .text,
+.acesoft-highlights-section .highlight-card .text {
+  color: #4a556f;
+}

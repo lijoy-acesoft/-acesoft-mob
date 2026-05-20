@@ -1,0 +1,81 @@
+/* Deep city SEO landing pages (London Ontario primary) */
+.seo-city-section {
+  padding: 3rem 0 1rem;
+  border-top: 1px solid var(--border, #e0e8f4);
+}
+.seo-city-section:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+.seo-city-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--navy, #0c1733);
+  margin: 0 0 1rem;
+}
+.seo-city-section h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--navy-mid, #13244b);
+}
+.seo-city-section p,
+.seo-city-section li {
+  color: var(--muted, #6b7a99);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+.seo-city-section p {
+  margin-bottom: 1rem;
+}
+.seo-city-section ul {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+.seo-city-section ul li {
+  margin-bottom: 0.5rem;
+}
+.seo-city-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+@media (max-width: 768px) {
+  .seo-city-two-col {
+    grid-template-columns: 1fr;
+  }
+}
+.seo-city-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.seo-city-proof-card {
+  background: #fff;
+  border: 1px solid var(--border, #e0e8f4);
+  border-radius: var(--r-sm, 12px);
+  padding: 1.25rem;
+  text-align: center;
+}
+.seo-city-proof-card strong {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--green-dk, #1e9d55);
+  margin-bottom: 0.25rem;
+}
+.seo-city-proof-card span {
+  font-size: 0.85rem;
+  color: var(--muted, #6b7a99);
+}
+.seo-city-faq .faq-item {
+  border-bottom: 1px solid var(--border, #e0e8f4);
+  padding: 1rem 0;
+}
+.seo-city-faq .faq-item:last-child {
+  border-bottom: none;
+}
+.seo-city-faq .faq-item h3 {
+  margin-top: 0;
+}
