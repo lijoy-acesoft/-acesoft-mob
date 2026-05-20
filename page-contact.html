@@ -145,6 +145,7 @@
 }
 </script>
 
+  <script>document.documentElement.classList.add("is-preloading");</script>
   <style>
     .flag-icon {
       display: inline-block;
@@ -491,6 +492,21 @@
     }
 
     /* Reference-style preloader */
+    html.is-preloading {
+      overflow: hidden;
+    }
+    html.is-preloading body.contact-page-shell .page-wrapper {
+      visibility: hidden;
+    }
+    #preloader {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999999;
+      pointer-events: auto;
+    }
+
     .container-preloader {
       align-items: center;
       cursor: none;
@@ -709,7 +725,6 @@
   </style>
 <script src="js/async-css.js" defer></script>
 </head>
-
 <body class="contact-page-shell">
   <div id="preloader">
     <div id="container-preloader" class="container-preloader">
@@ -1279,6 +1294,7 @@
       var preloader = document.getElementById("preloader");
       var container = document.getElementById("container-preloader");
       if (!preloader || !container) return;
+      document.documentElement.classList.remove("is-preloading");
       container.classList.add("loaded");
       window.setTimeout(function () {
         preloader.style.display = "none";

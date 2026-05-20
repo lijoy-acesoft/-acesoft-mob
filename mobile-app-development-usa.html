@@ -138,6 +138,7 @@
 }
 </script>
 
+  <script>document.documentElement.classList.add("is-preloading");</script>
   <style>
     /* ─── DESIGN TOKENS ─── */
     :root {
@@ -178,6 +179,21 @@
     }
 
     /* ─── PRELOADER (unchanged) ─── */
+    html.is-preloading {
+      overflow: hidden;
+    }
+    html.is-preloading body.service-shell .page-wrapper {
+      visibility: hidden;
+    }
+    #preloader {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999999;
+      pointer-events: auto;
+    }
+
     .container-preloader { align-items:center;cursor:none;display:flex;height:100%;justify-content:center;position:fixed;left:0;top:0;width:100%;z-index:900; }
     .container-preloader .animation-preloader { position:absolute;z-index:100; }
     .container-preloader .animation-preloader .spinner { animation:spinner 1s infinite linear;border-radius:50%;border:10px solid rgba(0,0,0,.2);border-top-color:#ed1c24;height:9em;margin:0 auto 3.5em auto;width:9em; }
@@ -1560,6 +1576,7 @@
       var preloader = document.getElementById("preloader");
       var container = document.getElementById("container-preloader");
       if (!preloader || !container) return;
+      document.documentElement.classList.remove("is-preloading");
       container.classList.add("loaded");
       window.setTimeout(function () { preloader.style.display = "none"; }, 1100);
     });

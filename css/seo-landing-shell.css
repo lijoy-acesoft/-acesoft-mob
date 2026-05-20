@@ -39,6 +39,24 @@ body.ios-seo-page #header-root {
   z-index: 100;
 }
 
+/* Hide page until preloader is ready (prevents skeleton flash) */
+html.is-preloading {
+  overflow: hidden;
+}
+html.is-preloading body.service-shell .page-wrapper,
+html.is-preloading body.android-seo-page .page-wrapper,
+html.is-preloading body.ios-seo-page .page-wrapper {
+  visibility: hidden;
+}
+#preloader {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  pointer-events: auto;
+}
+
 .container-preloader {
   align-items: center;
   display: flex;

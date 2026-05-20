@@ -63,6 +63,7 @@
     {"@type":"Question","name":"What industries do you build mobile apps for in London?","acceptedAnswer":{"@type":"Answer","text":"Healthcare, finance, insurance, automotive, retail, logistics, professional services and technology startups."}}
   ]}
   </script>
+  <script>document.documentElement.classList.add("is-preloading");</script>
 </head>
 <body class="service-shell">
   <div id="preloader">
@@ -512,6 +513,7 @@
       var preloader = document.getElementById("preloader");
       var container = document.getElementById("container-preloader");
       if (!preloader || !container) return;
+      document.documentElement.classList.remove("is-preloading");
       container.classList.add("loaded");
       window.setTimeout(function () { preloader.style.display = "none"; }, 1100);
     });

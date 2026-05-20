@@ -56,6 +56,7 @@
     {"@type":"Question","name":"","acceptedAnswer":{"@type":"Answer","text":""}}
   ]}
   </script>
+  <script>document.documentElement.classList.add("is-preloading");</script>
 </head>
 <body class="android-seo-page">
   <div id="preloader">
@@ -188,6 +189,7 @@
       var preloader = document.getElementById("preloader");
       var container = document.getElementById("container-preloader");
       if (!preloader || !container) return;
+      document.documentElement.classList.remove("is-preloading");
       container.classList.add("loaded");
       window.setTimeout(function () { preloader.style.display = "none"; }, 1100);
     });
